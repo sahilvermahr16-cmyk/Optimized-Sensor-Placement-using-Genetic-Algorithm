@@ -32,3 +32,81 @@ Where:
 - SensorCost = number of sensors
 
 - α = cost weight (0 = ignore cost)
+
+
+# Genetic Algorithm Design
+
+-Flow Chart
+
+               ┌──────────────────────────┐
+               │      Start Program       │
+               └──────────────┬───────────┘
+                              │
+                              ▼
+               ┌──────────────────────────┐
+               │ Define GA parameters     │
+               │ (WIDTH, HEIGHT, RADIUS,  │
+               │  POP_SIZE, GENERATIONS…) │
+               └──────────────┬───────────┘
+                              │
+                              ▼
+               ┌──────────────────────────┐
+               │ 1. Create Initial        │
+               │    Population            │
+               │ (Random Sensor Positions)│
+               └──────────────┬───────────┘
+                              │
+                              ▼
+               ┌──────────────────────────┐
+               │ For each Generation:     │
+               └──────────────┬───────────┘
+                              │
+                              ▼
+        ┌──────────────────────────────────────────┐
+        │ 2. Fitness Evaluation                    │
+        │  • Build coverage grid                   │
+        │  • Count covered cells                   │
+        │  • Fitness = coverage – α·cost           │
+        └───────────────────┬──────────────────────┘
+                            │
+                            ▼
+        ┌──────────────────────────────────────────┐
+        │ 3. Selection (Tournament Selection)       │
+        │  • Pick K random individuals             │
+        │  • Choose the best as Parent             │
+        └───────────────────┬──────────────────────┘
+                            │
+                            ▼
+        ┌──────────────────────────────────────────┐
+        │ 4. Crossover                              │
+        │  • One-point crossover combines parents   │
+        │  • Produce two new children               │
+        └───────────────────┬──────────────────────┘
+                            │
+                            ▼
+        ┌──────────────────────────────────────────┐
+        │ 5. Mutation                              │
+        │  • Randomly change sensor coordinates     │
+        │  • Maintains diversity                    │
+        └───────────────────┬──────────────────────┘
+                            │
+                            ▼
+        ┌──────────────────────────────────────────┐
+        │ 6. Form New Population                    │
+        │  • Replace old population with children   │
+        └───────────────────┬──────────────────────┘
+                            │
+                            ▼
+               ┌──────────────────────────┐
+               │ End of Generations?      │
+               └───────┬───────────┬─────┘
+                       │Yes        │No
+                       │           ▼
+                       │     Loop back to
+                       │     Fitness Evaluation
+                       ▼
+             ┌─────────────────────────────┐
+             │ Output Best Sensor Placement │
+             │ Output Coverage & Fitness    │
+             └─────────────────────────────┘
+

@@ -110,3 +110,75 @@ Where:
              │ Output Coverage & Fitness    │
              └─────────────────────────────┘
 
+# Running the Program
+
+Run the main file:
+
+- python ga_sensors.py
+
+# Example Output
+
+Coverage Map
+      ............#.......
+      .......#####S###....
+      ......###########...
+      .....########S###...
+      .....###########....
+      ...........##.......
+
+- S	Sensor position
+- #	Covered cell
+- .	Uncovered cell
+
+# Fitness Evolution (Sample)
+
+Generation 0: 108
+
+Generation 1: 124
+
+Generation 2: 139
+
+Generation 3: 145
+
+...
+
+
+This shows how solutions improve over time.
+
+# Adjustable Parameters
+
+Inside ga_sensors.py, you can modify:
+
+WIDTH = 20
+
+HEIGHT = 10
+
+NUM_SENSORS = 8
+
+RADIUS = 3
+
+ALPHA = 0.0        # cost weight
+
+POP_SIZE = 40
+
+GENERATIONS = 50
+
+CROSS_RATE = 0.9
+
+MUT_RATE = 0.1
+
+📁 Project Structure
+├── ga_sensors.py            # Main Genetic Algorithm implementation
+└── README.md                # Documentation
+
+# Complexity Analysis
+
+Time complexity:
+
+- O(G*P*S*W*H)
+
+where G = generations, P = population size, S = sensors per individual.
+
+Space complexity:
+
+- O(P*S+W*H)

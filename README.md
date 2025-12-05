@@ -17,7 +17,7 @@ This assignment demonstrates how evolutionary algorithms can be used to solve re
 
 Given: A 2D grid of size:
 
-WIDTH×HEIGHT
+                  WIDTH×HEIGHT
 
 N sensors to place
 

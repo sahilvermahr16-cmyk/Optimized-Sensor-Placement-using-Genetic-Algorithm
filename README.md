@@ -119,6 +119,7 @@ Run the main file:
 # Example Output
 
 Coverage Map
+      
       ............#.......
       .......#####S###....
       ......###########...
@@ -126,9 +127,11 @@ Coverage Map
       .....###########....
       ...........##.......
 
-- S	Sensor position
-- #	Covered cell
-- .	Uncovered cell
+- S-Sensor position
+ 
+- #-Covered cell
+
+- .-Uncovered cell
 
 # Fitness Evolution (Sample)
 
@@ -167,9 +170,9 @@ CROSS_RATE = 0.9
 
 MUT_RATE = 0.1
 
-📁 Project Structure
-├── ga_sensors.py            # Main Genetic Algorithm implementation
-└── README.md                # Documentation
+    📁 Project Structure
+    ├── ga_sensors.py            # Main Genetic Algorithm implementation
+    └── README.md                # Documentation
 
 # Complexity Analysis
 
